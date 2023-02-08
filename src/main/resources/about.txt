@@ -1,0 +1,14 @@
+The program is build like this:
+    - options tab: Here you add the options and the categories/wheels in which they are sorted
+        Value: the value describes how often it should be present on the wheel. Standard ought to be 1
+        Add Value: Just add a value by specifing category, option and value
+        Remove Value: Remove the selected value
+        Pie Chart: Shows how much this challenge has been finished
+    - wheels tab:
+        Click to spin
+    - stats tab:
+        Shows the options and how far they have been done
+
+Save Menu -> Saves all options and results\n
+Reset Menu -> Resets back to last save\n
+About Menu -> Opens this page\n

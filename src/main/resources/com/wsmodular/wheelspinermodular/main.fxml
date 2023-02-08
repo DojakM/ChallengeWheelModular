@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wsmodular.wheelspinermodular.ChallengeController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" text="Save" />
+                  <MenuItem fx:id="resetMenuItem" mnemonicParsing="false" text="Reset" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="wheelsTab" text="Wheels">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <ToolBar fx:id="wheelBar" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                     </top>
+                     <center>
+                        <Pane fx:id="wheelPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </content>
+          </Tab>
+            <Tab text="Options">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <TreeView fx:id="treeView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                     </left>
+                     <center>
+                        <PieChart fx:id="pieChart" BorderPane.alignment="CENTER" />
+                     </center>
+                     <top>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <items>
+                            <Button fx:id="addOption" mnemonicParsing="false" text="Add Option" />
+                              <Button fx:id="remOption" mnemonicParsing="false" text="Remove Option" />
+                              <Label text="Value:" visible="false">
+                                 <padding>
+                                    <Insets left="150.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="minusButton" disable="true" maxHeight="8.0" minHeight="8.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="12.0" style="-fx-background-color: lightblue; -fx-shape: &quot;M 100 200 L 100 350 L 750 350 L 750 200 L 100 200 M 100 200 L 100 350 L 750 350 L 750 200 L 100 200 &quot;; -fx-border-color: teal;" visible="false" />
+                              <Label fx:id="valLabel" text="0" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="plusButton" disable="true" maxHeight="16.0" minHeight="8.0" mnemonicParsing="false" prefHeight="8.0" style="-fx-background-color: lightblue; -fx-shape: &quot;M 300 50 L 500 50 L 500 200 L 650 200 L 650 400 L 500 400 L 500 550 L 300 550 L 300 400 L 150 400 L 150 200 L 300 200 L 300 50 M 300 50 L 500 50 L 500 200 L 650 200 L 650 400 L 500 400 L 500 550 L 300 550 L 300 400 L 150 400 L 150 200 L 300 200 L 300 50 &quot;; -fx-border-color: teal;" visible="false" />
+                          </items>
+                        </ToolBar>
+                     </top>
+                  </BorderPane>
+               </content>
+            </Tab>
+            <Tab text="Result">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <items>
+                              <DatePicker fx:id="startDate" prefHeight="26.0" prefWidth="116.0" promptText="Start" />
+                              <DatePicker fx:id="endDate" prefHeight="26.0" prefWidth="111.0" promptText="End" />
+                              <ToggleButton fx:id="switchField" mnemonicParsing="false" text="Bool" />
+                              <Button fx:id="distButton" mnemonicParsing="false" text="Distribution" />
+                              <Button fx:id="punButton" mnemonicParsing="false" text="Punishment" />
+                           </items>
+                        </ToolBar>
+                     </top>
+                     <center>
+                        <TableView fx:id="resTableView" prefHeight="329.0" prefWidth="391.0" BorderPane.alignment="CENTER" />
+                     </center></BorderPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
